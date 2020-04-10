@@ -15,7 +15,7 @@ class Layout extends Component {
     this.setState({ showSideDrawer: false });
   };
 
-  // Set toggle state from open to close
+  // Set toggle state from open to close and vice versa
   sideDrawerToggleHandler = () => {
     this.setState((prevState) => {
       return { showSideDrawer: !prevState.showSideDrawer };
