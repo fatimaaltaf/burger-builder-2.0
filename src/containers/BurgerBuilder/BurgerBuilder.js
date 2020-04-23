@@ -82,7 +82,25 @@ class BurgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    alert("You continue!");
+    const order = {
+      ingredients: this.state.ingredients,
+      price: this.state.totalPrice,
+      customer: {
+        name: "Fatima Altaf",
+        address: {
+          street: "123 Toronto",
+          province: "Ontario",
+          country: "Canada",
+          postalCode: "M9T 4T8",
+        },
+        email: "abc@gmail.com",
+      },
+      deliveryMethod: "fastest",
+    };
+    axios
+      .post("/orders.json", order)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
   };
 
   render() {
